@@ -6,13 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/rgb.h>
-
-#define DFLT_LAYER  0
-#define NUMS_LAYER  1
-#define META_LAYER  2
-
 
 / {
 	keymap {
@@ -20,43 +13,18 @@
 
 		default_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |   ESC   |   Q   |   W   |   E   |   R   |   T   |                                              |   Y    |   U   |   I   |   O    |    P    |    \   |
-// |   TAB   |   A   |   S   |   D   |   F   |   G   |                                              |   H    |   J   |   K   |   L    |    ;    |    '   |
-// |  LSHFT  |   Z   |   X   |   C   |   V   |   B   |  LCTRL |            |      |          | BSPC |   N    |   M   |   ,   |   .    |    /    | RSHFT  |
-//                      |  POWER  |  LMETA  |  BSPC  |  LALT  | LAYER DOWN |      | LAYER UP | RET  |   SPACE   |   DEL   |  RGB  |
-
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                         &kp Y     &kp U   &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                         &kp H     &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LCTRL &none                      &none     &kp BSPC &kp N     &kp M   &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-	  &tog NUMS_LAYER &kp LMETA &kp BSPC  &kp LALT  &tog NUMS_LAYER              &none     &kp RET  &kp SPACE &kp DEL &rgb_ug RGB_TOG
+	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
-
-
-		numbers_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  F1  |  F2  |   F3  |  F4  |  F5  |   F6  |                                                |  F7  |  F8  |  F9  |  F10 |  F11  |  F12  |
-// |  ~   |  1   |   2   |  3   |  4   |   5   |                                                |  6   |  7   |  8   |   9  |   0   |   -   |
-// |  =   |  !   |   @   |  #   |  $   |   %   |  [  |     {      |          |     }    |   ]   |  ^   |  &   |  *   |   (  |   )   |   |   |
-//                  |       |        |         |     | LAYER DOWN |          | LAYER UP |  RET  |   SPACE   |    DEL    |  RGB  |
-
-
-			bindings = <
-    &kp F1    &kp F2   &kp F3 &kp F4   &kp F5     &kp F6                                                 &kp F7    &kp F8   &kp F9   &kp F10  &kp F11  &kp F12
-    &kp GRAVE &kp N1   &kp N2 &kp N3   &kp N4     &kp N5                                                 &kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &kp MINUS
-    &kp EQUAL &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PRCT &kp LBRC &kp LBKT          &kp RBKT  &kp RBRC &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp PIPE
-	                    &tog DFLT_LAYER &kp LMETA &kp BSPC &kp LALT &mo DFLT_LAYER    &none     &kp RET  &kp SPACE &kp DEL &rgb_ug RGB_TOG
-			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-
-
-
 	};
 };
-
-
