@@ -42,7 +42,7 @@
 // |   ~   |  !  |  @  |  #  |  $  |  %  |                                              |  ^  |  &  |  *  |  =  |  -  |   +   |
 // |   `   |  1  |  2  |  3  |  4  |  5  |                                              |  6  |  7  |  8  |  9  |  0  |   _   |
 // | LSHFT |     |  {  |  [  |  (  |  <  |  LALT  |  NUMS_L  |          | MISC_L | INS  |  >  |  )  |  ]  |  }  |     | RSHFT |
-//                 | MUTE | LMETA | ENTR |  LCTRL |  NUMS_L  |          | MISC_L | BSPC |  SPACE  |  DEL  |  SCRL |
+//                 | MUTE | LMETA | ENTR |  LCTRL |  NUMS_L  |          | MISC_L | BSPC |  SPACE | DEL | SCRL |
 
 
 			bindings = <
@@ -58,10 +58,10 @@
 
 		misc_layer {
  ---------------------------------------------------------------------------------------------------------------------------------
-// |  F1   |  F2   |   F3   |  F4   |  F5   |  F6   |                                     |  F7  |  F8  |   F9   |  F10  | F11 |  F12  |
-// |  TAB  |  PRT  |  HOME  |  END  | PG DN | PG UP |                                     | LEFT |  UP  |  DOWN  | RIGHT |     |       |
-// | LSHFT |       |        |       |       |       | LALT | NUMS_L |     | MISC_L | INS  |      | PREV | PAUSE  | NEXT  |     |       |
-//                 |  MUTE  | LMETA | ENTR | LCTRL | NUMS_L |             | MISC_L | BSPC |  SPACE  |  DEL  |  SCRL |
+// |  F1   |  F2   |   F3   |  F4   |  F5   |  F6   |                                       |  F7   |  F8  |   F9   |  F10  | F11 |  F12  |
+// |  TAB  |  PRT  |  HOME  |  END  | PG DN | PG UP |                                       | LEFT  |  UP  |  DOWN  | RIGHT |     |       |
+// | LSHFT |       |        |       |       |       | LALT  | NUMS_L |     | MISC_L |  INS  |       | PREV | PAUSE  | NEXT  |     |       |
+//                    |   MUTE   |  LMETA  |   ENT  | LCTRL | NUMS_L |     | MISC_L |  BSPC |  SPACE  |  DEL  |  SCRL  |
 
 
 			bindings = <
