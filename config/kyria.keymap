@@ -8,10 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DFLT_L  0
 #define NUMS_L  1
 #define MISC_L  2
+#define ZMK     3
 
 
 / {
@@ -23,17 +26,18 @@
 // |  ESC  |  Q  |  W  |  E  |  R  |  T  |                                              |  Y  |  U  |  I  |  O  |  P  |    \   |
 // |  TAB  |  A  |  S  |  D  |  F  |  G  |                                              |  H  |  J  |  K  |  L  |  ;  |    '   |
 // | LSHFT |  Z  |  X  |  C  |  V  |  B  | LALT | NUMS_L |              | MISC_L | INS  |  N  |  M  |  ,  |  .  |  /  | RSHFT  |
-//                 | MUTE | LMETA | ENTR | LCTRL | NUMS_L |             | MISC_L | BSPC |  SPACE  |  DEL  |  SCRL |
+//                 | MUTE | LMETA | ENTR | LCTRL | NUMS_L |             | MISC_L | BSPC |  SPACE  |  DEL  |  POWER |
 
 			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                        &kp Y   &kp U   &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                        &kp H   &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LALT &tog NUMS_L              &tog MISC_L &kp INS  &kp N   &kp M   &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-	  		   &kp C_MUTE &kp LMETA &kp RET &kp LCTL &mo NUMS_L                &mo MISC_L &kp BSPC &kp SPACE  &kp DEL &none
+	&lt ZMK ESC &kp Q &kp W &kp E &kp R &kp T                                                        &kp Y   &kp U   &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB     &kp A &kp S &kp D &kp F &kp G                                                        &kp H   &kp J   &kp K     &kp L   &kp SEMI &kp SQT
+	&kp LSHFT   &kp Z &kp X &kp C &kp V &kp B &kp LALT &tog NUMS_L              &tog MISC_L &kp INS  &kp N   &kp M   &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	  		   &kp C_MUTE &kp LMETA &kp RET &kp LCTL &mo NUMS_L                &mo MISC_L &kp BSPC &kp SPACE  &kp DEL &ext_power EXT_POWER_TOGGLE_CMD 
 			>;
 
+			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
 //			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN >;
-			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN >;
+//			sensor-bindings = < &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN &inc_dec_kp C_VOL_UP C_VOL_DN >;
 		};
 
 
@@ -52,29 +56,45 @@
 	  		   &kp C_MUTE &kp LMETA &kp RET &kp LCTL &mo NUMS_L                        &mo MISC_L &kp BSPC &kp SPACE &kp DEL &none
 			>;
 
-			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN >;
+			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
 		};
 
 
 		misc_layer {
- ---------------------------------------------------------------------------------------------------------------------------------
-// |  F1   |  F2   |   F3   |  F4   |  F5   |  F6   |                                       |  F7   |  F8  |   F9   |  F10  | F11 |  F12  |
-// |  TAB  |  PRT  |  HOME  |  END  | PG DN | PG UP |                                       | LEFT  |  UP  |  DOWN  | RIGHT |     |       |
-// | LSHFT |       |        |       |       |       | LALT  | NUMS_L |     | MISC_L |  INS  |       | PREV | PAUSE  | NEXT  |     |       |
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  F1   |  F2   |   F3   |  F4   |  F5   |  F6   |                                       |  F7   |  F8    |   F9   |  F10  | F11 |  F12  |
+// |  TAB  |  PRT  |  HOME  |  END  | PG DN | PG UP |                                       | LEFT  |  DOWN  |   UP   | RIGHT |     |       |
+// | LSHFT |       |        |       |       |       | LALT  | NUMS_L |     | MISC_L |  INS  |       |  PREV  | PAUSE  | NEXT  |     |       |
 //                    |   MUTE   |  LMETA  |   ENT  | LCTRL | NUMS_L |     | MISC_L |  BSPC |  SPACE  |  DEL  |  SCRL  |
-
+ 
 
 			bindings = <
     &kp F1    &kp F2          &kp F3   &kp F4   &kp F5    &kp F6                                                &kp F7    &kp F8     &kp F9      &kp F10    &kp F11  &kp F12
-    &kp TAB   &kp PSCRN       &kp HOME &kp END  &kp PG_DN &kp PG_UP                                             &kp LEFT  &kp UP     &kp DOWN    &kp RIGHT  &none    &none
+    &kp TAB   &kp PSCRN       &kp HOME &kp END  &kp PG_DN &kp PG_UP                                             &kp LEFT  &kp DOWN   &kp UP      &kp RIGHT  &none    &none
 	&kp LSHFT &none           &none    &none    &none     &none     &kp LALT &tog NUMS_L   &tog MISC_L &kp INS  &none     &kp C_PREV &kp C_PAUSE &kp C_NEXT &none    &kp RSHFT
 	  		   &kp C_BRI_AUTO &kp LMETA &kp RET &kp LCTL &mo NUMS_L                         &mo MISC_L &kp BSPC &kp SPACE &kp DEL    &none
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN >;
+			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
+		};
+
+		zmk_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  |      |      |      |  OUT_USB |      |                             | RGB_HUI | RGB_SAI | RGB_BRI | RGB_SPI | RGB_EFF |   |
+// |  | BT_1 | BT_2 | BT_3 |   BT_4   | BT_5 |                             |         |         |         |         |         |   |
+// |  |      |      |      |  OUT_BLE |      |  | NUMS_L |     | MISC_L |  | RGB_HUD | RGB_SAD | RGB_BRD | RGB_SPD | RGB_EFR |   |
+//              |      |          |  BT_CLR  |  | NUMS_L |     | MISC_L |  |    RGB_TOG     |         |        |
+ 
+
+			bindings = <
+    &none  &none        &none        &none        &out OUT_USB  &none                                                &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &none 
+    &none  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5                                         &none    	 &none        &none        &none        &none        &none
+	&none  &none        &none        &none        &out OUT_BLE  &none         &none &tog NUMS_L   &tog MISC_L &none  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &none 
+	  		                &none         &none       &none    &bt BT_CLR    &none &mo NUMS_L     &mo MISC_L &none  &rgb_ug RGB_TOG  &none        &none
+			>;
+
+			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
 		};
 
 	};
 };
-
-
