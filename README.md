@@ -1,5 +1,7 @@
 # Kyria configuration for ZMK and QMK
 
+>The images were generated in http://www.keyboard-layout-editor.com/ with the corresponding json files.
+
 Default Layer
 ![Default Layer](keyboard-layout/kyria-dflt.png "Default layer")
 
