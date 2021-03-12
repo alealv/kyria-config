@@ -25,13 +25,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E  |  R  |  T  |                                              |  Y  |  U  |  I  |  O  |  P  |    \   |
 // |  TAB  |  A  |  S  |  D  |  F  |  G  |                                              |  H  |  J  |  K  |  L  |  ;  |    '   |
-// | LSHFT |  Z  |  X  |  C  |  V  |  B  | LALT | NUMS_L |              | MISC_L | INS  |  N  |  M  |  ,  |  .  |  /  | RSHFT  |
+// | LSHFT |  Z  |  X  |  C  |  V  |  B  | LALT | NUMS_L |              | MISC_L | CAPS  |  N  |  M  |  ,  |  .  |  /  | RSHFT  |
 //                 | MUTE | LMETA | ENTR | LCTRL | NUMS_L |             | MISC_L | BSPC |  SPACE  |  DEL  |  POWER |
 
 			bindings = <
 	&lt ZMK ESC &kp Q &kp W &kp E &kp R &kp T                                                        &kp Y   &kp U   &kp I     &kp O   &kp P    &kp BSLH
 	&kp TAB     &kp A &kp S &kp D &kp F &kp G                                                        &kp H   &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT   &kp Z &kp X &kp C &kp V &kp B &kp LALT &tog NUMS_L              &tog MISC_L &kp INS  &kp N   &kp M   &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	&kp LSHFT   &kp Z &kp X &kp C &kp V &kp B &kp LALT &tog NUMS_L              &tog MISC_L &kp CAPS &kp N   &kp M   &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 	  		   &kp C_MUTE &kp LMETA &kp RET &kp LCTL &mo NUMS_L                &mo MISC_L &kp BSPC &kp SPACE  &kp DEL &ext_power EXT_POWER_TOGGLE_CMD 
 			>;
 
@@ -45,14 +45,14 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |   ~   |  !  |  @  |  #  |  $  |  %  |                                              |  ^  |  &  |  *  |  =  |  -  |   +   |
 // |   `   |  1  |  2  |  3  |  4  |  5  |                                              |  6  |  7  |  8  |  9  |  0  |   _   |
-// | LSHFT |     |  {  |  [  |  (  |  <  |  LALT  |  NUMS_L  |          | MISC_L | INS  |  >  |  )  |  ]  |  }  |     | RSHFT |
+// | LSHFT |     |  {  |  [  |  (  |  <  |  LALT  |  NUMS_L  |          | MISC_L | CAPS |  >  |  )  |  ]  |  }  |     | RSHFT |
 //                 | MUTE | LMETA | ENTR |  LCTRL |  NUMS_L  |          | MISC_L | BSPC |  SPACE | DEL | SCRL |
 
 
 			bindings = <
-    &kp GRAVE &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PRCT                                               &kp CARET &kp AMPS &kp STAR &kp EQUAL &kp MINUS &kp PLUS
+    &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PRCT                                               &kp CARET &kp AMPS &kp STAR &kp EQUAL &kp MINUS &kp PLUS
     &kp GRAVE &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                                                 &kp N6    &kp N7   &kp N8   &kp N9    &kp N0    &kp UNDER
-	&kp LSHFT &none    &kp LBKT &kp LBRC &kp LPAR   &kp LT   &kp LALT &tog NUMS_L     &tog MISC_L &kp INS  &kp GT    &kp RPAR &kp RBRC &kp RBKT  &none     &kp RSHFT
+	&kp LSHFT &none    &kp LBKT &kp LBRC &kp LPAR   &kp LT   &kp LALT &tog NUMS_L     &tog MISC_L &kp CAPS &kp GT    &kp RPAR &kp RBRC &kp RBKT  &none     &kp RSHFT
 	  		   &kp C_MUTE &kp LMETA &kp RET &kp LCTL &mo NUMS_L                        &mo MISC_L &kp BSPC &kp SPACE &kp DEL &none
 			>;
 
@@ -62,17 +62,17 @@
 
 		misc_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  F1   |  F2   |   F3   |  F4   |  F5   |  F6   |                                       |  F7   |  F8    |   F9   |  F10  | F11 |  F12  |
-// |  TAB  |  PRT  |  HOME  |  END  | PG DN | PG UP |                                       | LEFT  |  DOWN  |   UP   | RIGHT |     |       |
-// | LSHFT |       |        |       |       |       | LALT  | NUMS_L |     | MISC_L |  INS  |       |  PREV  | PAUSE  | NEXT  |     |       |
-//                    |   MUTE   |  LMETA  |   ENT  | LCTRL | NUMS_L |     | MISC_L |  BSPC |  SPACE  |  DEL  |  SCRL  |
+// |  F1   |  F2  |  F3  |  F4   |  F5  |  F6  |                                       |  F7   |  F8    |   F9   |  F10  | F11 |  F12  |
+// |  TAB  |      |      | PG UP | HOME | INS  |                                       | LEFT  |  DOWN  |   UP   | RIGHT |     |  PRT  |
+// | LSHFT |      |      | PG DN |  END |      | LALT  | NUMS_L |     | MISC_L |  CAPS |       |  PREV  | PAUSE  | NEXT  |     |       |
+//                  |  MUTE  |  LMETA  |  ENT  | LCTRL | NUMS_L |     | MISC_L |  BSPC |  SPACE  |  DEL   |  SCRL  |
  
 
 			bindings = <
-    &kp F1    &kp F2          &kp F3   &kp F4   &kp F5    &kp F6                                                &kp F7    &kp F8     &kp F9      &kp F10    &kp F11  &kp F12
-    &kp TAB   &kp PSCRN       &kp HOME &kp END  &kp PG_DN &kp PG_UP                                             &kp LEFT  &kp DOWN   &kp UP      &kp RIGHT  &none    &none
-	&kp LSHFT &none           &none    &none    &none     &none     &kp LALT &tog NUMS_L   &tog MISC_L &kp INS  &none     &kp C_PREV &kp C_PAUSE &kp C_NEXT &none    &kp RSHFT
-	  		   &kp C_BRI_AUTO &kp LMETA &kp RET &kp LCTL &mo NUMS_L                         &mo MISC_L &kp BSPC &kp SPACE &kp DEL    &none
+    &kp F1    &kp F2  &kp F3  &kp F4    &kp F5    &kp F6                                                 &kp F7    &kp F8     &kp F9      &kp F10    &kp F11  &kp F12
+    &kp TAB   &none   &none   &kp PG_UP &kp HOME  &kp INS                                                &kp LEFT  &kp DOWN   &kp UP      &kp RIGHT  &none    &kp PSCRN
+	&kp LSHFT &none   &none   &kp PG_DN &kp END   &none   &kp LALT &tog NUMS_L      &tog MISC_L &kp CAPS &none     &kp C_PREV &kp C_PAUSE &kp C_NEXT &none    &kp RSHFT
+	  		            &kp C_BRI_AUTO &kp LMETA  &kp RET &kp LCTL &mo NUMS_L        &mo MISC_L &kp BSPC &kp SPACE &kp DEL    &none
 			>;
 
 			sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
